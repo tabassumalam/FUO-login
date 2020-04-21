@@ -10,9 +10,7 @@ import SignUpBusiness from './components/SignUpBusiness'
 function App() {
   return (
     <div>
-      <div>
-        <Header />
-      </div>
+      <Header />
       <div className="main">
         <LogIn />
         <SignUp />
