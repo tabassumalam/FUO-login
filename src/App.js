@@ -11,6 +11,7 @@ function App() {
   return (
     <div>
       <div>
+      console.log("here");
         <Header />
       </div>
       <div className="main">
