@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
   
     return (
       <div className={classes.root}>
-        <AppBar position="static">
+        <AppBar position="static" color="default">
           <Toolbar>
             <Typography variant="h6" className={classes.title}>
               Log In / Sign Up

@@ -61,7 +61,6 @@ export default function SignUp() {
                 fullWidth
                 id="businessType"
                 label="Business Type"
-                autoFocus
               />
             </Grid>
 

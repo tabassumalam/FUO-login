@@ -41,7 +41,6 @@ function TabPanel(props) {
       'aria-controls': `simple-tabpanel-${index}`,
     };
   }
-  
 
 const useStyles = makeStyles((theme) => ({
     paper: {
@@ -87,13 +86,14 @@ export default function SignUp() {
                 <Tab label="Customer" /*{...a11yProps(0)}*//>
                 <Tab label="Business"  /*{...a11yProps(1)}*//>
             </Tabs>
-            
+
+
             <TabPanel value={value} index={0}>
                 <SignUpCustomer />
             </TabPanel>
             <TabPanel value={value} index={1}>
                 <SignUpBusiness /> 
-            </TabPanel> 
+            </TabPanel>
 
         </div>
     </Container>

@@ -1,3 +1,8 @@
+/* 
+* This file holds the CSS commentary for App.js
+* It sets the style guidelines for the Log In/Sign Up page.
+*/
+
 .App {
   text-align: center;
 }
@@ -37,7 +42,12 @@
   }
 }
 
+/* puts Log In and Sign Up pages side by side */
 .main{
   display: flex;
   flex-direction: row;
+}
+
+.MuiAppBar-colorDefault { 
+  background: var(--bg-green);
 }
