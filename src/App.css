@@ -48,6 +48,7 @@
   flex-direction: row;
 }
 
-.MuiAppBar-colorDefault { 
-  background: var(--bg-green);
+.identity-options{
+  display: flex;
+  flex-direction: row;
 }
