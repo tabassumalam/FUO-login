@@ -18,7 +18,7 @@ function App() {
     <div>
       <Header />
       {/* LogIn and SignUp will appear side by side */}
-      <div className="main">
+      <div className="main-display">
         <LogIn />
         <SignUp />
       </div>
