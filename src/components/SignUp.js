@@ -24,16 +24,16 @@ function TabPanel(props) {
     const { children, value, index, ...other } = props;
   
     return (
-      <Typography
-        component="div"
-        role="tabpanel"
-        hidden={value !== index}
-        id={`simple-tabpanel-${index}`}
-        aria-labelledby={`simple-tab-${index}`}
-        {...other}
-      >
-        {value === index && <Box p={3}>{children}</Box>}
-      </Typography>
+        <Typography
+            component="div"
+            role="tabpanel"
+            hidden={value !== index}
+            id={`simple-tabpanel-${index}`}
+            aria-labelledby={`simple-tab-${index}`}
+            {...other}
+        >
+            {value === index && <Box p={3}>{children}</Box>}
+        </Typography>
     );
   }
   
@@ -85,15 +85,13 @@ export default function SignUp() {
         <div className={classes.paper}>
 
             {/** title for the Sign Up component */}
-            <Typography component="h1" variant="h5">
-                    Sign Up
-            </Typography>
+            <h2> Sign Up </h2> 
 
             {/** to create two tabs  */}
             <Tabs value={value}
                 onChange={handleChange}
-                indicatorColor="primary"
-                textColor="inherit"
+                indicatorColor="default"
+                textColor="default"
                 centered
                 fullWidth
                 aria-label="simple tabs example"

@@ -30,7 +30,7 @@
 }
 
 .App-link {
-  color: #61dafb;
+  color: rgb(103, 211, 103);
 }
 
 @keyframes App-logo-spin {
@@ -48,7 +48,3 @@
   flex-direction: row;
 }
 
-.identity-options{
-  display: flex;
-  flex-direction: row;
-}

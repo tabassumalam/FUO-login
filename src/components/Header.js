@@ -10,7 +10,6 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
 
 
 /** style guidelines for the Header componenet */
@@ -25,7 +24,6 @@ const useStyles = makeStyles((theme) => ({
     },
   }));
   
-
 /** function to create the Header component */
 export default function Header() {
 
@@ -33,12 +31,12 @@ export default function Header() {
   
     return (
       <div className={classes.root}>
-        <AppBar position="static" style={{background: '#32cd32'}}>
+        <AppBar position="static" style={{background: '#67d367'}}>
           <Toolbar>
             {/** title for the Header */}
-            <Typography variant="h6" className={classes.title}>
+            <h2 className={classes.title}>
               Log In / Sign Up
-            </Typography>
+            </h2>
           </Toolbar>
         </AppBar>
       </div>
