@@ -62,6 +62,11 @@ const useStyles = makeStyles((theme) => ({
       alignItems: 'center',
       flexGrow: 1,
     },
+    /** guidelines for the tab indicators */
+    indicator: {
+        textColor: 'inherit',
+        backgroundColor: 'black',
+    },
   }));
 
   /** function to create the Sign Up component */
@@ -75,7 +80,7 @@ export default function SignUp() {
 
   return (
       /** use container to allow horizontal alignment */
-    <Container component="main" maxWidth="xs">
+    <Container component="main" maxWidth="m">
         <CssBaseline />
         <div className={classes.paper}>
 
@@ -88,9 +93,11 @@ export default function SignUp() {
             <Tabs value={value}
                 onChange={handleChange}
                 indicatorColor="primary"
-                textColor="primary"
+                textColor="inherit"
                 centered
-                aria-label="simple tabs example">
+                fullWidth
+                aria-label="simple tabs example"
+                classes= {{indicator: classes.indicator}}>
                 {/** label for the two different tab options */}
                 <Tab label="Customer" {...a11yProps(0)}/>
                 <Tab label="Business"  {...a11yProps(1)}/>
