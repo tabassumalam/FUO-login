@@ -144,9 +144,7 @@ export default function LogIn() {
                         Log In
                     </Button>
                 </Link>
-                <Route path="/ErrorPage">
-                    <ErrorPage />
-                </Route> 
+                <Redirect to="/ErrorPage" />
                 </Router>
 
                 {/** allow users to retrieve password if forgotten */}
