@@ -12,8 +12,10 @@ import LogIn from './components/LogIn';
 import SignUp from './components/SignUp';
 
 
+
 // function to create the Log In/Sign Up page
 function App() {
+
   return (
     <div>
       <Header />

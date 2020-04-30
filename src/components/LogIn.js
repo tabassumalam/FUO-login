@@ -16,6 +16,11 @@ import Container from '@material-ui/core/Container';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Radio from '@material-ui/core/Radio';
 import RadioGroup from '@material-ui/core/RadioGroup';
+import { Redirect } from 'react-router-dom';
+import {BrowserRouter as Router, Route} from 'react-router-dom';
+import routing from '../index';
+import ErrorPage from './ErrorPage';
+
 
 /** style guidelines for the Log In compoenent */
 const useStyles = makeStyles((theme) => ({
@@ -55,6 +60,7 @@ const CssTextField = withStyles({
     },
 })(TextField);
 
+
 /** function to create the Log In component  */
 export default function LogIn() {
 
@@ -70,7 +76,7 @@ export default function LogIn() {
             <h2> Log in </h2>
 
             {/** the log in form to fill out  */}
-            <form className={classes.form} noValidate>
+            <form className={classes.form} noValidate >
 
                 {/** textfield to enter user email address */}
                 <CssTextField
@@ -126,14 +132,22 @@ export default function LogIn() {
                 </RadioGroup>
 
                 {/** log in button after enterring email & password */}
-                <Button
-                    type="submit"
-                    fullWidth
-                    variant="contained"
-                    color="default"
-                    className={classes.submit}>
-                    Log In
-                </Button>
+                <Router>
+                <Link to="/ErrorPage">
+                    <Button
+                        type="submit"
+                        fullWidth
+                        variant="contained"
+                        color="default"
+                        className={classes.submit}
+                        >
+                        Log In
+                    </Button>
+                </Link>
+                <Route path="/ErrorPage">
+                    <ErrorPage />
+                </Route> 
+                </Router>
 
                 {/** allow users to retrieve password if forgotten */}
                 <Grid container>

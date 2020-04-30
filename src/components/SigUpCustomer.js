@@ -13,6 +13,7 @@ import Grid from '@material-ui/core/Grid';
 import { withStyles, makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 
+
 /** style guidelines for the Customer Sign Up component */
 const useStyles = makeStyles((theme) => ({
     /** guidelines for the div component */
@@ -133,7 +134,8 @@ export default function SignUpCustomer() {
                     fullWidth
                     variant="contained"
                     color="default"
-                    className={classes.submit}>
+                    className={classes.submit}
+                    >
                     Sign Up
                 </Button>
 
