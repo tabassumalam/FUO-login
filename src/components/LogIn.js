@@ -61,31 +61,18 @@ const CssTextField = withStyles({
 /** function to create the Log In component  */
 export default function LogIn() {
 
-    const classes = useStyles();
-    const [value, setValue] = React.useState('');
-    const [helperText, setHelperText] = React.useState('');
+    // to call style guidelines
+    const classes = useStyles(); 
+    // used to set where the login button will link to
+    const [value, setValue] = React.useState(''); 
+    const [helperText, setHelperText] = React.useState('Please select an option above.');
+
 
     /** to change the variable value when radio handle is used */
     const handleRadioChange = (event) => {
         setValue(event.target.value);
+        setHelperText('')
     };
-
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        if (value === 'Customer') {
-
-            // render business hub
-        } 
-        else if (value === 'Business') {
-
-            // render business hub
-        } 
-        else {
-            setHelperText('Please select an option.');
-            // do not render
-        } 
-
-      };
 
     /** to change where the log in button routes to based on identity */
     var linkTo;
@@ -97,7 +84,7 @@ export default function LogIn() {
     }
     else {
         linkTo =""
-    }
+    } 
 
     return (
        /** use container to allow horizontal alignment  */
@@ -109,7 +96,7 @@ export default function LogIn() {
             <h2> Log in </h2>
 
             {/** the log in form to fill out  */}
-            <form className={classes.form} noValidate onSubmit={handleSubmit}>
+            <form className={classes.form} noValidate >
 
                 {/** textfield to enter user email address */}
                 <CssTextField
@@ -164,7 +151,7 @@ export default function LogIn() {
                     </Grid>
                 </RadioGroup>
                 {/** text to indicate user did not select identity option */}
-                <FormHelperText>{helperText}</FormHelperText>
+                <p><small>{helperText}</small></p>
 
 
                 {/** log in button after enterring email & password */}
