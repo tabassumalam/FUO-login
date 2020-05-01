@@ -12,6 +12,7 @@ import TextField from '@material-ui/core/TextField';
 import Grid from '@material-ui/core/Grid';
 import { withStyles, makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
+import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
 
 /** style guidelines for the Sign Up Business componenet */
 const useStyles = makeStyles((theme) => ({
@@ -155,6 +156,7 @@ export default function SignUpBusiness() {
         </Grid>
 
             {/** button to sign up new business account after form is filled out */}
+            <Link to="/ErrorPage">
             <Button
                 type="submit"
                 fullWidth
@@ -163,6 +165,7 @@ export default function SignUpBusiness() {
                 className={classes.submit}>
                 Sign Up
             </Button>
+            </Link>
 
         </form>
       </div>

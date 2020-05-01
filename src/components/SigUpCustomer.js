@@ -12,6 +12,7 @@ import TextField from '@material-ui/core/TextField';
 import Grid from '@material-ui/core/Grid';
 import { withStyles, makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
+import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
 
 
 /** style guidelines for the Customer Sign Up component */
@@ -129,15 +130,18 @@ export default function SignUpCustomer() {
             </Grid>
 
                 {/** signup button after entering all information */}
-                <Button
-                    type="submit"
-                    fullWidth
-                    variant="contained"
-                    color="default"
-                    className={classes.submit}
-                    >
-                    Sign Up
-                </Button>
+                <Link to="/ErrorPage">
+                    <Button
+                        type="submit"
+                        fullWidth
+                        variant="contained"
+                        color="default"
+                        className={classes.submit}
+                        >
+                        Sign Up
+                    </Button>
+                </Link>    
+
 
             </form>
         </div>

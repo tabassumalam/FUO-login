@@ -9,18 +9,15 @@ import React from 'react';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import TextField from '@material-ui/core/TextField';
-import Link from '@material-ui/core/Link';
+//import Link from '@material-ui/core/Link';
 import Grid from '@material-ui/core/Grid';
 import { withStyles, makeStyles, } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
+import FormHelperText from '@material-ui/core/FormHelperText';
 import Radio from '@material-ui/core/Radio';
 import RadioGroup from '@material-ui/core/RadioGroup';
-import { Redirect } from 'react-router-dom';
-import {BrowserRouter as Router, Route} from 'react-router-dom';
-import routing from '../index';
-import ErrorPage from './ErrorPage';
-
+import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
 
 /** style guidelines for the Log In compoenent */
 const useStyles = makeStyles((theme) => ({
@@ -65,6 +62,31 @@ const CssTextField = withStyles({
 export default function LogIn() {
 
     const classes = useStyles();
+    const [value, setValue] = React.useState('');
+    const [isCustomer, setCustomer] = React.useState(false);
+    const [helperText, setHelperText] = React.useState('');
+
+
+    const handleRadioChange = (event) => {
+        setValue(event.target.value);
+    };
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        if (value === 'Customer') {
+            setCustomer(true);
+            // render business hub
+        } 
+        else if (value === 'Business') {
+            setCustomer(false);
+            // render business hub
+        } 
+        else {
+            setHelperText('Please select an option.');
+            // do not render
+        } 
+
+      };
 
     return (
        /** use container to allow horizontal alignment  */
@@ -76,7 +98,7 @@ export default function LogIn() {
             <h2> Log in </h2>
 
             {/** the log in form to fill out  */}
-            <form className={classes.form} noValidate >
+            <form className={classes.form} noValidate onSubmit={handleSubmit}>
 
                 {/** textfield to enter user email address */}
                 <CssTextField
@@ -105,7 +127,7 @@ export default function LogIn() {
                 />
 
                 {/** grid to identify customer/business accounts */}
-                <RadioGroup aria-label="identity" name="identifier" >
+                <RadioGroup aria-label="identity" name="identifier" onChange={handleRadioChange}>
 
                     {/** subtitle indicating user to choose*/}
                     <p> I am a ... </p>
@@ -130,10 +152,12 @@ export default function LogIn() {
                         </Grid>
                     </Grid>
                 </RadioGroup>
+                {/** text to indicate user did not select identity option */}
+                <FormHelperText>{helperText}</FormHelperText>
+
 
                 {/** log in button after enterring email & password */}
-                <Router>
-                <Link to="/ErrorPage">
+                <Link to="/ErrorPage"> 
                     <Button
                         type="submit"
                         fullWidth
@@ -143,15 +167,14 @@ export default function LogIn() {
                         >
                         Log In
                     </Button>
-                </Link>
-                <Redirect to="/ErrorPage" />
-                </Router>
+                </Link> 
+
 
                 {/** allow users to retrieve password if forgotten */}
                 <Grid container>
                     <Grid item xs>
                         {/** link to resetting password */}
-                        <Link href="#" variant="p">
+                        <Link to="/ErrorPage" variant="p" style={{color: '#1401ee'}}>
                         Forgot password?
                         </Link>
                     </Grid>
