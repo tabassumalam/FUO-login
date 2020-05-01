@@ -63,10 +63,9 @@ export default function LogIn() {
 
     const classes = useStyles();
     const [value, setValue] = React.useState('');
-    const [isCustomer, setCustomer] = React.useState(false);
     const [helperText, setHelperText] = React.useState('');
 
-
+    /** to change the variable value when radio handle is used */
     const handleRadioChange = (event) => {
         setValue(event.target.value);
     };
@@ -74,11 +73,11 @@ export default function LogIn() {
     const handleSubmit = (event) => {
         event.preventDefault();
         if (value === 'Customer') {
-            setCustomer(true);
+
             // render business hub
         } 
         else if (value === 'Business') {
-            setCustomer(false);
+
             // render business hub
         } 
         else {
@@ -87,6 +86,18 @@ export default function LogIn() {
         } 
 
       };
+
+    /** to change where the log in button routes to based on identity */
+    var linkTo;
+    if (value === 'Customer') {
+        linkTo = "/ErrorPage"
+    } 
+    else if (value === 'Business') {
+        linkTo = "/BusinessDashboardParent"
+    }
+    else {
+        linkTo =""
+    }
 
     return (
        /** use container to allow horizontal alignment  */
@@ -157,7 +168,7 @@ export default function LogIn() {
 
 
                 {/** log in button after enterring email & password */}
-                <Link to="/ErrorPage"> 
+                <Link to={linkTo}> 
                     <Button
                         type="submit"
                         fullWidth
@@ -167,8 +178,7 @@ export default function LogIn() {
                         >
                         Log In
                     </Button>
-                </Link> 
-
+                </Link>
 
                 {/** allow users to retrieve password if forgotten */}
                 <Grid container>

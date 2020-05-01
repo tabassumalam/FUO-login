@@ -156,7 +156,7 @@ export default function SignUpBusiness() {
         </Grid>
 
             {/** button to sign up new business account after form is filled out */}
-            <Link to="/ErrorPage">
+            <Link to="/BusinessDashboardParent">
             <Button
                 type="submit"
                 fullWidth

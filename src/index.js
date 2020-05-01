@@ -4,12 +4,14 @@ import './index.css';
 import App from './App';
 import ErrorPage from './components/ErrorPage';
 import {BrowserRouter, Route, Switch} from 'react-router-dom';
+import BusinessDashboardParent from './components/BusinessDashboardParent';
 
 export const routing = (
     <BrowserRouter>
     <Switch>
       <Route exact path="/" component={App} />
       <Route path="/ErrorPage" component={ErrorPage} />
+      <Route path="/BusinessDashboardParent" component={BusinessDashboardParent}/> 
     </Switch>
     </BrowserRouter>
 )
